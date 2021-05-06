@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'articles',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,12 @@ ROOT_URLCONF = 'webapp2.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'/Users/aimee/Downloads/code/Stripe/django-project-2/webapp2/webapp2/templates'],
+        'DIRS': [
+            # Global templates
+            r'/Users/aimee/Downloads/code/Stripe/django-project-2/webapp2/webapp2/templates',
+            # Article app templates
+            r'/Users/aimee/Downloads/code/Stripe/django-project-2/webapp2/articles/templates',
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
