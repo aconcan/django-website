@@ -58,10 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            # Global templates
-            r'/Users/aimee/Downloads/code/Stripe/django-project-2/webapp2/webapp2/templates',
-            # Article app templates
-            r'/Users/aimee/Downloads/code/Stripe/django-project-2/webapp2/articles/templates',
+            'templates',
             ],
         'APP_DIRS': True,
         'OPTIONS': {
