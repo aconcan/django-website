@@ -12,6 +12,8 @@
 
 <body>
     <div class='wrapper'>
+        <!-- Logo will link to the list URL -->
+        <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}"/></a></h1>
         <!-- Individual template content will go here -->
         {% block content %}
 
