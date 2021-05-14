@@ -12,6 +12,7 @@ urlpatterns = [
     path('', views.homepage),
     # Including the urls file from the articles app
     path('articles/', include('articles.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 # Appending method to urlpatterns so Django knows how to serve up static files
