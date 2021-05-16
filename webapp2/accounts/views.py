@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 
 # Fired every time a request hits the 'signup/' URL
 # Need to differentiate between POST and GET requests
@@ -38,3 +38,9 @@ def login_view(request):
     
     return render(request, 'accounts/login.html', { 'form': form })
 
+
+def logout_view(request):
+    # Detects the POST request sent from button click
+    if request.method == 'POST':
+        logout(request)
+        return redirect('articles:list')

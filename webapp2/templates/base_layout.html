@@ -14,6 +14,17 @@
     <div class='wrapper'>
         <!-- Logo will link to the list URL -->
         <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}"/></a></h1>
+        <nav>
+            <ul>
+                <li>
+                    <!-- When user clicks submit, a POST request will be sent to logout_view -->
+                    <form class='logout-link' action='{% url "accounts:logout" %}' method='post'>
+                        {% csrf_token %}
+                        <button type='submit'>Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
         <!-- Individual template content will go here -->
         {% block content %}
 
