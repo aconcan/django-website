@@ -1,0 +1,12 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+    <!-- Can flesh out form data here for the user to create a new article -->
+    <div class='create-article'>
+        <h2> Create New Article </h2>
+        <form>
+            <button><a href='{% url "articles:list" %}'>Home</a></button>
+        </form>
+    </div>
+
+{% endblock %}
