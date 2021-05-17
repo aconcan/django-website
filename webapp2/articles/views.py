@@ -20,7 +20,10 @@ def article_create(request):
         # Validating the data we receive on the request.POST object against our model
         form = forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid():
-            # Placeholder for saving article to the DB
+            # Not committing to DB. Returning instance so we can set the author to be current user 
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
             return redirect('articles:list')
     # Creating instance of form to output to article_create.html
     form = forms.CreateArticle()
