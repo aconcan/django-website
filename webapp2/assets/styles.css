@@ -19,3 +19,85 @@ a, a:hover, a:visited{
     color: #fff;
     text-decoration: none;
 }
+
+.wrapper {
+    max-width: 960px;
+    margin: 0;
+}
+
+div.wrapper h1{
+    text-align: center;
+    /* 100px top and bottom, auto left and right */
+    margin: 100px auto;
+    font-size: 2.4ems;
+}
+
+header {
+    display: grid;
+    /* Columns of 2 equal fractions */
+    grid-template-columns: 1fr 1fr;
+    /* 20px top and bottom, zero left and right */
+    padding: 20px 0;
+}
+
+/* Moving the nav bar to the right */
+nav {
+    justify-self: end;
+}
+
+nav li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav button{
+    background: none;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+}
+
+/* The surrounding container  */
+.articles {
+    display: grid;
+    /* 3 columns of equal size */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Gap between the elements */
+    grid-gap: 30px;
+}
+
+.article {
+    padding: 10px;
+    border: 1px solid lightseagreen;
+    position: relative;
+    /* Not really sure why */
+    padding-bottom: 40px;
+}
+
+.article h2 {
+    font-size: 1.5em;
+}
+
+/* All articles contained by the class article-detail */
+.article-detail .article {
+    padding: 0;
+    border: 0;
+}
+
+.article-detail .article h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2em;
+}
+
+.article-detail .article .date{
+    text-align: center;
+    font-size: .8em;
+}
+
+.article-detail .article p {
+    text-align: center;
+    font-size: 1.2;
+}

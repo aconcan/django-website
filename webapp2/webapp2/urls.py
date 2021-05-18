@@ -9,7 +9,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about),
-    path('', views.homepage),
+    path('', views.homepage, name='home'),
     # Including the urls file from the articles app
     path('articles/', include('articles.urls')),
     path('accounts/', include('accounts.urls')),

@@ -6,31 +6,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles</title>
+    <title>aconcan</title>
     <link rel='stylesheet' href='{% static "styles.css" %}'>
+    <link rel='icon' href="https://i.dlpng.com/static/png/6434620_preview.png">
 </head>
 
 <body>
     <div class='wrapper'>
         <!-- Logo will link to the list URL -->
-        <h1><a href="{% url 'articles:list' %}"><img src="{% static 'logo.png' %}"/></a></h1>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    <li>
-                        <!-- When user clicks submit, a POST request will be sent to logout_view -->
-                        <form class='logout-link' action='{% url "accounts:logout" %}' method='post'>
-                            {% csrf_token %}
-                            <button type='submit'>Logout</button>
-                        </form>
-                    </li>
-                    <li><a href='{% url "articles:create" %}' class='highlight'>New article</a></li>
-                {% else %}
-                    <li><a href='{% url "accounts:login" %}'>Login</a></li>
-                    <li><a href='{% url "accounts:signup" %}'>Signup</a></li>
-                {% endif %}
-            </ul>
-        </nav>
+        <header><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}"/></a>
+            <nav>
+                <ul>
+                    {% if user.is_authenticated %}
+                        <li>
+                            <!-- When user clicks submit, a POST request will be sent to logout_view -->
+                            <form class='logout-link' action='{% url "accounts:logout" %}' method='post'>
+                                {% csrf_token %}
+                                <button type='submit'>Logout</button>
+                            </form>
+                        </li>
+                        <li><a href='{% url "articles:create" %}' class='highlight'>New article</a></li>
+                    {% else %}
+                        <li><a href='{% url "accounts:login" %}'>Login</a></li>
+                        <li><a href='{% url "accounts:signup" %}'>Signup</a></li>
+                    {% endif %}
+                        <li><a href='{% url "articles:list" %}'>Blog</a></li>
+                </ul>
+            </nav>
+        </header>
         <!-- Individual template content will go here -->
         {% block content %}
 
