@@ -1,13 +1,14 @@
 body{
-    background-color: #0f121f;
+    background-color: lightpink;
     /* Can use relative path as image is in same directory as styles.css */
-    background-image: url(stars.png);
-    background-repeat-y: no-repeat;
+    /* background-repeat-y: no-repeat; */
     color: #fff;
 }
 
 body *{
     font-family: Ubuntu;
+    color: black;
+    margin: auto;
 }
 
 h1, h2, h3, h4, h5{
@@ -16,7 +17,7 @@ h1, h2, h3, h4, h5{
 }
 
 a, a:hover, a:visited{
-    color: #fff;
+    color: black;
     text-decoration: none;
 }
 
@@ -33,22 +34,25 @@ div.wrapper h1{
 }
 
 header {
+    background-color: white;
     display: grid;
     /* Columns of 2 equal fractions */
     grid-template-columns: 1fr 1fr;
     /* 20px top and bottom, zero left and right */
     padding: 20px 0;
+
 }
 
 /* Moving the nav bar to the right */
-nav {
+/* nav {
     justify-self: end;
-}
+} */
 
 nav li{
+    color: black;
     display: inline-block;
     list-style-type: none;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav button{
@@ -106,13 +110,8 @@ nav button{
     font-size: 1.2em;
 }
 
-.site-form {
-    margin-top: 60px;
-    border: 1px solid lightseagreen;
-    padding: 20px;
-}
-
 .site-form input, .site-form textarea {
+    
     display: block;
     margin-top: 5px;
     margin-bottom: 18px; 
@@ -145,6 +144,23 @@ a.highlight {
     color: white;
     font-size: 1em;
     border-radius: 4px;
-    padding: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin: 15px 0;
+}
+
+.site-form {
+    margin-top: 60px;
+    /* Center the body */
+    margin: auto;
+    max-width: 200px;
+    border: 1px solid lightseagreen;
+    padding: 20px;
+}
+
+.login-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
