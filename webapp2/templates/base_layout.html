@@ -16,9 +16,13 @@
 <body>
     <div class='wrapper'>
         <!-- Logo will link to the list URL -->
-        <header><a href="{% url 'home' %}"><img src="{% static 'logo.png' %}"/></a>
+        <header><a href="{% url 'home' %}"><img width = 110px src="{% static 'icon.png' %}"/></a>
             <nav>
                 <ul>
+                    <li><a href='{% url "home" %}'>home</a></li>
+                    <li><a href='{% url "articles:list" %}'>guestbook</a></li>
+                    <li><a href='{% url "work" %}'>work</a></li>
+                    <li><a href='{% url "about" %}'>about</a></li>
                     {% if user.is_authenticated %}
                         <li>
                             <!-- When user clicks submit, a POST request will be sent to logout_view -->
@@ -30,11 +34,8 @@
                         <li><a href='{% url "articles:create" %}' class='highlight'>New article</a></li>
                     {% else %}
                         <li><a href='{% url "accounts:login" %}'>login</a></li>
-                        <li><a href='{% url "accounts:signup" %}'>signup</a></li>
+                        <li><a href='{% url "accounts:signup" %}'>sign up</a></li>
                     {% endif %}
-                        <li><a href='{% url "articles:list" %}'>guestbook</a></li>
-                        <li><a href='{% url "about" %}'>work</a></li>
-                        <li><a href='{% url "about" %}'>about</a></li>
                 </ul>
             </nav>
         </header>

@@ -9,6 +9,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/', views.about, name='about'),
+    path('work/', views.work, name='work'),
     path('', views.homepage, name='home'),
     # Including the urls file from the articles app
     path('articles/', include('articles.urls')),

@@ -3,8 +3,8 @@
 {% block content %}
 
 <div class="login-container">
+    <h1 class='form-heading'>log in</h1><br>
     <form class='site-form' action='{% url "accounts:login"%}' method='post'>
-        <h2 class='form-heading'>log in</h2><br>
         {% csrf_token %}
         {{ form }}
         {% if request.GET.next %}

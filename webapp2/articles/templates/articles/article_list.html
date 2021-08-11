@@ -8,8 +8,8 @@
     <div class='articles'>
         {% for article in articles %}
             <div class='article'>
-                <h2><a href="{% url 'articles:detail' article.slug %}">{{article.title}}</a></h2>
-                <p>{{article.snippet}}</p>
+                <h2>{{article.author}}</h2>
+                <p>{{article.body}}</p><br>
                 <p class='date'>{{article.date}}</p>
             </div>
         {% endfor %}
